@@ -41,14 +41,6 @@ app.post('/commands/clapbot', (req, res) => {
   }, helpCommand)
 
   payload.response_type = 'in_channel';
-
-  console.log('===============');
-  console.log('PAYLOAD');
-  console.log(payload);
-  console.log('===============');
-  console.log('RES');
-  console.log(res);
-  console.log('===============');
   cmd.handler(payload, res)
 })
 
