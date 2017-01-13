@@ -10,25 +10,27 @@ const msgDefaults = {
   icon_emoji: config('ICON_EMOJI')
 }
 
-let clapped = payload.text;
-clapped = clapped.split();
-let clappedText = "";
-
-for (var i = 0; i < clapped.length; i++) {
-  clappedText = clappedText + clapped[i] + " 👏 ";
-  clapped[i]
-}
-
-let attachments = [
-  {
-    // title: 'Starbot will help you find the hippest repos on GitHub',
-    // color: '#2FA44F',
-    text: clappedText,
-    mrkdwn_in: ['text']
-  },
-]
 
 const handler = (payload, res) => {
+  
+  let clapped = payload.text;
+  clapped = clapped.split();
+  let clappedText = "";
+
+  for (var i = 0; i < clapped.length; i++) {
+    clappedText = clappedText + clapped[i] + " 👏 ";
+    clapped[i]
+  }
+
+  let attachments = [
+    {
+      // title: 'Starbot will help you find the hippest repos on GitHub',
+      // color: '#2FA44F',
+      text: clappedText,
+      mrkdwn_in: ['text']
+    },
+  ]
+
   let msg = _.defaults({
     channel: payload.channel_name,
     response_type: "in_channel",
