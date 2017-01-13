@@ -34,6 +34,7 @@ app.post('/commands/clapbot', (req, res) => {
     res.status(401).end(err)
     return
   }
+  //
 
   let cmd = _.reduce(commands, (a, cmd) => {
     return payload.text.match(cmd.pattern) ? cmd : a
