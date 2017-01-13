@@ -43,6 +43,13 @@ app.post('/commands/clapbot', (req, res) => {
   payload.response_type = 'in_channel';
   payload.text = 'whatsup stu mon';
 
+  console.log('===============');
+  console.log('PAYLOAD');
+  console.log(payload);
+  console.log('===============');
+  console.log('RES');
+  console.log(res);
+  console.log('===============');
   cmd.handler(payload, res)
 })
 
