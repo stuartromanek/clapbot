@@ -12,7 +12,7 @@ const msgDefaults = {
 
 
 const handler = (payload, res) => {
-  
+
   let clapped = payload.text;
   clapped = clapped.split();
   let clappedText = "";
@@ -30,6 +30,8 @@ const handler = (payload, res) => {
       mrkdwn_in: ['text']
     },
   ]
+
+  payload.text = clappedText;
 
   let msg = _.defaults({
     channel: payload.channel_name,
