@@ -51,8 +51,10 @@ app.post('/commands/clapbot', (req, res) => {
   // console.log(res);
   // console.log('===============');
   // cmd.handler(payload, res)
+
   let msg = _.defaults({
     channel: payload.channel_name,
+    text: 'another text thing',
     attachments: [text: 'whasssup']
   }, msgDefaults)
 
