@@ -14,7 +14,7 @@ const msgDefaults = {
 const handler = (payload, res) => {
 
   let clapped = payload.text;
-  clapped = clapped.split();
+  clapped = clapped.split(" ");
   let clappedText = "";
 
   console.log('enter For');
