@@ -17,10 +17,13 @@ const handler = (payload, res) => {
   clapped = clapped.split();
   let clappedText = "";
 
+  console.log('enter For');
   for (var i = 0; i < clapped.length; i++) {
+    console.log('FOR FOR FOR');
     clappedText = clappedText + clapped[i] + " 👏 ";
     clapped[i]
   }
+  console.log('past For');
 
   let attachments = [
     {
