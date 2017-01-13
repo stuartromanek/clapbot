@@ -35,32 +35,22 @@ app.post('/commands/clapbot', (req, res) => {
     return
   }
 
-  //
-  // let cmd = _.reduce(commands, (a, cmd) => {
-  //   return payload.text.match(cmd.pattern) ? cmd : a
-  // }, helpCommand)
-  //
-  // payload.response_type = 'in_channel';
-  // payload.text = 'whatsup stu mon';
-  //
-  // console.log('===============');
-  // console.log('PAYLOAD');
-  // console.log(payload);
-  // console.log('===============');
-  // console.log('RES');
-  // console.log(res);
-  // console.log('===============');
-  // cmd.handler(payload, res)
 
-  let msg = _.defaults({
-    channel: payload.channel_name,
-    text: 'another text thing',
-    attachments: [text: 'whasssup']
-  }, msgDefaults)
+  let cmd = _.reduce(commands, (a, cmd) => {
+    return payload.text.match(cmd.pattern) ? cmd : a
+  }, helpCommand)
 
-  res.set('content-type', 'application/json')
-  res.status(200).json(msg)
-  return
+  payload.response_type = 'in_channel';
+  payload.text = 'whatsup stu mon';
+
+  console.log('===============');
+  console.log('PAYLOAD');
+  console.log(payload);
+  console.log('===============');
+  console.log('RES');
+  console.log(res);
+  console.log('===============');
+  cmd.handler(payload, res)
 })
 
 app.listen(config('PORT'), (err) => {
