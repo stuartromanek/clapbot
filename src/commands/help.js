@@ -38,7 +38,7 @@ const handler = (payload, res) => {
 
   let msg = _.defaults({
     channel: payload.channel_name,
-    response_type: "in_channel",
+    // response_type: "in_channel",
     attachments: attachments
   }, msgDefaults)
 
