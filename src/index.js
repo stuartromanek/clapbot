@@ -40,7 +40,9 @@ app.post('/commands/clapbot', (req, res) => {
     return payload.text.match(cmd.pattern) ? cmd : a
   }, helpCommand)
 
-  console.log(payload);
+  payload.response_type = 'in_channel';
+  payload.text = 'whatsup stu mon';
+
   cmd.handler(payload, res)
 })
 
